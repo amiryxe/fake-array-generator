@@ -6,9 +6,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "rc-checkbox": "^2.2.0",
     "react": "^16.13.1",
+    "react-code-highlighter": "^5.6.3",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-syntax-highlighter": "^12.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
