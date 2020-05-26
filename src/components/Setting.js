@@ -45,6 +45,7 @@ const Setting = () => {
   return (
     <div>
       <h1>Fake Array Generator</h1>
+      <br />
       <h2>Setting:</h2>
       <label>
         <p>Count of items in array:</p>
