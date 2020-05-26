@@ -94,6 +94,7 @@ const Setting = () => {
               value={keyValInputs[item.id - 1].value}
               onChange={keyValArrayHandler}
             />
+            <button className='delete-btn'>×</button>
           </li>
         ))}
       </ul>

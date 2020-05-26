@@ -61,3 +61,10 @@ pre {
   cursor: pointer;
   color: #fff;
 }
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
