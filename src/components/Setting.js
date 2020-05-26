@@ -4,7 +4,24 @@ import Checkbox from 'rc-checkbox';
 import 'rc-checkbox/assets/index.css';
 
 const Setting = () => {
-  const { arrayLength, setArrayLength } = useContext(MainContext);
+  const {
+    arrayLength,
+    setArrayLength,
+    autoID,
+    setAutoID,
+    randomId,
+    setRandomID,
+  } = useContext(MainContext);
+
+  const changeIdHandler = (name) => {
+    if (name === 'autoID') {
+      setAutoID(true);
+      setRandomID(false);
+    } else {
+      setRandomID(true);
+      setAutoID(false);
+    }
+  };
 
   return (
     <div>
@@ -18,33 +35,21 @@ const Setting = () => {
           onChange={(e) => setArrayLength(Number(e.target.value))}
         />
       </label>
-      Type of elements:
-      <ul>
-        <li>
-          <label>
-            <Checkbox />
-            Object
-          </label>
-        </li>
-        <li>
-          <label>
-            <Checkbox />
-            String
-          </label>
-        </li>
-        <li>
-          <label>
-            <Checkbox />
-            Number
-          </label>
-        </li>
-      </ul>
+
       <label>
-        <Checkbox />
+        <Checkbox
+          name='autoID'
+          checked={autoID}
+          onChange={(e) => changeIdHandler(e.target.name)}
+        />
         Auto ID
       </label>
       <label>
-        <Checkbox />
+        <Checkbox
+          name='randomID'
+          checked={randomId}
+          onChange={(e) => changeIdHandler(e.target.name)}
+        />
         Random ID
       </label>
     </div>
