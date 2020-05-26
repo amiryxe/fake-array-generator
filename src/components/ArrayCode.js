@@ -4,14 +4,26 @@ import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MainContext from '../context/mainContext';
 
 const ArrayCode = () => {
-  const { arrayLength, autoID } = useContext(MainContext);
+  const { arrayLength, autoID, keyValInputs } = useContext(MainContext);
 
   const generateArray = () => {
     let str = '';
     for (let i = 0; i < arrayLength; i++) {
       str += `{ 
     id: ${autoID ? i + 1 : String(Math.random()).split('.')[1]},
-    title: 'salam'
+    ${
+      keyValInputs.length > 0
+        ? keyValInputs
+            .map((item) =>
+              item.key
+                ? `${item.key}: ${
+                    item.value > 0 ? item.value : `"${item.value}"`
+                  }`
+                : ''
+            )
+            .join(',\n    ')
+        : ''
+    }
   },
   `;
     }
