@@ -33,6 +33,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 label {
@@ -52,4 +53,11 @@ ul {
 
 pre {
   max-height: 650px;
+}
+
+.add-another {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
 }

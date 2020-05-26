@@ -84,7 +84,9 @@ const Setting = () => {
           </li>
         ))}
       </ul>
-      <button onClick={addKeyValInput}>Add another?</button>
+      <button className='add-another' onClick={addKeyValInput}>
+        + Add another?
+      </button>
     </div>
   );
 };
