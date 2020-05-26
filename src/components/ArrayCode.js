@@ -10,15 +10,15 @@ const ArrayCode = () => {
     let str = '';
     for (let i = 0; i < arrayLength; i++) {
       str += `{ 
-        id: ${autoID ? i + 1 : String(Math.random()).split('.')[1]},
-        title: 'salam'
-      },
-      `;
+    id: ${autoID ? i + 1 : String(Math.random()).split('.')[1]},
+    title: 'salam'
+  },
+  `;
     }
 
     return `[
-      ${str}
-    ]`;
+  ${str}
+]`;
   };
 
   return (
