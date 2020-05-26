@@ -6,7 +6,14 @@ const MainState = (props) => {
   const [mainString, setMainString] = useState('');
   const [autoID, setAutoID] = useState(true);
   const [randomId, setRandomID] = useState(false);
-  const [keyVal, setKeyVal] = useState({});
+
+  const [keyValInputs, setKeyValInputs] = useState([
+    {
+      id: 1,
+      key: 'title',
+      value: 'Book',
+    },
+  ]);
 
   return (
     <MainContext.Provider
@@ -23,8 +30,8 @@ const MainState = (props) => {
         randomId,
         setRandomID,
 
-        keyVal,
-        setKeyVal,
+        keyValInputs,
+        setKeyValInputs,
       }}
     >
       {props.children}

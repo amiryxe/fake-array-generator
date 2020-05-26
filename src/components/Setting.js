@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import MainContext from '../context/mainContext';
 import Checkbox from 'rc-checkbox';
 import 'rc-checkbox/assets/index.css';
@@ -11,8 +11,8 @@ const Setting = () => {
     setAutoID,
     randomId,
     setRandomID,
-    keyVal,
-    setKeyVal,
+    keyValInputs,
+    setKeyValInputs,
   } = useContext(MainContext);
 
   const changeIdHandler = (name) => {
@@ -25,14 +25,6 @@ const Setting = () => {
     }
   };
 
-  const [keyValInputs, setKeyValInputs] = useState([
-    {
-      id: 1,
-      key: 'Title',
-      value: 'Book',
-    },
-  ]);
-
   const addKeyValInput = () => {
     setKeyValInputs([
       ...keyValInputs,
@@ -42,6 +34,12 @@ const Setting = () => {
         value: '',
       },
     ]);
+  };
+
+  const keyValArrayHandler = (e) => {
+    const updatedArray = [...keyValInputs];
+    updatedArray[e.target.dataset.idx - 1][e.target.name] = e.target.value;
+    setKeyValInputs(updatedArray);
   };
 
   return (
@@ -79,8 +77,22 @@ const Setting = () => {
       <ul>
         {keyValInputs.map((item) => (
           <li key={item.id}>
-            <input type='text' placeholder='Key' defaultValue={item.key} />
-            <input type='text' placeholder='Value' defaultValue={item.value} />
+            <input
+              type='text'
+              placeholder='Key'
+              name='key'
+              data-idx={item.id}
+              value={keyValInputs[item.id - 1].key}
+              onChange={keyValArrayHandler}
+            />
+            <input
+              type='text'
+              name='value'
+              data-idx={item.id}
+              placeholder='Value'
+              value={keyValInputs[item.id - 1].value}
+              onChange={keyValArrayHandler}
+            />
           </li>
         ))}
       </ul>
