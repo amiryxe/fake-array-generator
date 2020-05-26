@@ -1,5 +1,11 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: Comfortaa, Helvetica, sans-serif;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  color: #fff;
 }
 
 *:focus {
@@ -36,4 +42,8 @@ ul {
 
 .rc-checkbox {
   margin-right: 10px;
+}
+
+pre {
+  max-height: 650px;
 }
