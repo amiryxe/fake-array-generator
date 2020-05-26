@@ -8,10 +8,10 @@ function App() {
   return (
     <div className='container'>
       <MainState>
-        <div>
+        <div className='section'>
           <Setting />
         </div>
-        <div>
+        <div className='section'>
           <ArrayCode />
         </div>
       </MainState>

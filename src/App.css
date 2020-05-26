@@ -9,6 +9,10 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.section {
+  padding: 3rem;
+}
+
 input {
   padding: 0.5rem;
   border: 1px solid #ccc;

@@ -4,7 +4,7 @@ import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MainContext from '../context/mainContext';
 
 const ArrayCode = () => {
-  const { arrayLength, autoID, randomId } = useContext(MainContext);
+  const { arrayLength, autoID } = useContext(MainContext);
 
   const generateArray = () => {
     let str = '';
