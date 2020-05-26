@@ -1,3 +1,7 @@
+body {
+  font-family: Comfortaa, Helvetica, sans-serif;
+}
+
 *:focus {
   outline: none;
   border: 1px dashed rgba(0, 0, 0, 0.2);
