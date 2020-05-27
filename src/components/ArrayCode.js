@@ -17,11 +17,11 @@ const ArrayCode = () => {
             .map((item) =>
               item.key
                 ? `${item.key}: ${
-                    item.value > 0 ? item.value : `"${item.value}",`
+                    item.value > 0 ? item.value + ',\n' : `"${item.value}",\n`
                   }`
                 : ''
             )
-            .join('\n    ')
+            .join('    ')
         : ''
     }
   },
