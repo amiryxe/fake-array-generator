@@ -42,6 +42,14 @@ const Setting = () => {
     setKeyValInputs(updatedArray);
   };
 
+  const deleteItemHandler = (index) => {
+    if (keyValInputs.length > 1) {
+      const updatedArray = [...keyValInputs];
+      updatedArray.splice(index, 1);
+      setKeyValInputs(updatedArray);
+    }
+  };
+
   return (
     <div>
       <h1>Fake Array Generator</h1>
@@ -76,14 +84,14 @@ const Setting = () => {
       <hr />
 
       <ul>
-        {keyValInputs.map((item) => (
+        {keyValInputs.map((item, index) => (
           <li key={item.id}>
             <input
               type='text'
               placeholder='Key'
               name='key'
               data-idx={item.id}
-              value={keyValInputs[item.id - 1].key}
+              value={keyValInputs[index].key}
               onChange={keyValArrayHandler}
             />
             <input
@@ -91,10 +99,15 @@ const Setting = () => {
               name='value'
               data-idx={item.id}
               placeholder='Value'
-              value={keyValInputs[item.id - 1].value}
+              value={keyValInputs[index].value}
               onChange={keyValArrayHandler}
             />
-            <button className='delete-btn'>×</button>
+            <button
+              className='delete-btn'
+              onClick={() => deleteItemHandler(index)}
+            >
+              ×
+            </button>
           </li>
         ))}
       </ul>
