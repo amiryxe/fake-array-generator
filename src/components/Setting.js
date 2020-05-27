@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import MainContext from '../context/mainContext';
 import Checkbox from 'rc-checkbox';
 import 'rc-checkbox/assets/index.css';
@@ -41,6 +41,16 @@ const Setting = () => {
     updatedArray[e.target.dataset.idx - 1][e.target.name] = e.target.value;
     setKeyValInputs(updatedArray);
   };
+
+  const [showDeleteButton, setShowDeleteButton] = useState(true);
+
+  useEffect(() => {
+    if (keyValInputs.length > 1) {
+      setShowDeleteButton(true);
+    } else {
+      setShowDeleteButton(false);
+    }
+  }, [keyValInputs]);
 
   const deleteItemHandler = (index) => {
     if (keyValInputs.length > 1) {
@@ -102,12 +112,14 @@ const Setting = () => {
               value={keyValInputs[index].value}
               onChange={keyValArrayHandler}
             />
-            <button
-              className='delete-btn'
-              onClick={() => deleteItemHandler(index)}
-            >
-              ×
-            </button>
+            {showDeleteButton && (
+              <button
+                className='delete-btn'
+                onClick={() => deleteItemHandler(index)}
+              >
+                ×
+              </button>
+            )}
           </li>
         ))}
       </ul>
