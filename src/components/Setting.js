@@ -71,7 +71,9 @@ const Setting = () => {
           type='text'
           placeholder='Length of Array'
           value={arrayLength}
-          onChange={(e) => setArrayLength(Number(e.target.value))}
+          onChange={(e) =>
+            e.target.value <= 200 && setArrayLength(Number(e.target.value))
+          }
         />
       </label>
 
