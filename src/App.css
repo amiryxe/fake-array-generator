@@ -80,4 +80,13 @@ pre {
   cursor: pointer;
   background: transparent;
   border: none;
+  padding: 0 2px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.code-area button:hover {
+  background: yellow;
 }
