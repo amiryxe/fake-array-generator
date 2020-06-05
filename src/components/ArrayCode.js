@@ -35,13 +35,13 @@ const ArrayCode = () => {
   };
 
   return (
-    <div>
+    <div className='code-area'>
       <SyntaxHighlighter language='javascript' style={a11yDark}>
         {generateArray()}
       </SyntaxHighlighter>
 
       <CopyToClipboard text={generateArray()}>
-        <button>Copy to clipboard with button</button>
+        <button>📄</button>
       </CopyToClipboard>
     </div>
   );

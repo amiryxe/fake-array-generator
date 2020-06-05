@@ -68,3 +68,16 @@ pre {
   color: #fff;
   cursor: pointer;
 }
+
+.code-area {
+  position: relative;
+}
+
+.code-area button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
