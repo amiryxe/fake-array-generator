@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MainContext from '../context/mainContext';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const ArrayCode = () => {
   const { arrayLength, autoID, keyValInputs } = useContext(MainContext);
@@ -34,9 +35,15 @@ const ArrayCode = () => {
   };
 
   return (
-    <SyntaxHighlighter language='javascript' style={a11yDark}>
-      {generateArray()}
-    </SyntaxHighlighter>
+    <div>
+      <SyntaxHighlighter language='javascript' style={a11yDark}>
+        {generateArray()}
+      </SyntaxHighlighter>
+
+      <CopyToClipboard text={generateArray()}>
+        <button>Copy to clipboard with button</button>
+      </CopyToClipboard>
+    </div>
   );
 };
 
