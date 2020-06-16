@@ -40,6 +40,16 @@ const Setting = () => {
     const updatedArray = [...keyValInputs];
     updatedArray[e.target.dataset.idx - 1][e.target.name] = e.target.value;
     setKeyValInputs(updatedArray);
+
+    if (e.target.name === 'key') {
+      if (
+        /^[0-9$-/:-?{-~!"^_`\[\]]+$/.test(
+          updatedArray[e.target.dataset.idx - 1][e.target.name][0]
+        )
+      ) {
+        alert('error');
+      }
+    }
   };
 
   const [showDeleteButton, setShowDeleteButton] = useState(true);
