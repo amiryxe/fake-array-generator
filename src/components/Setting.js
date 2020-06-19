@@ -32,6 +32,7 @@ const Setting = () => {
         id: keyValInputs[keyValInputs.length - 1].id + 1,
         key: '',
         value: '',
+        errorKey: false,
       },
     ]);
   };
@@ -39,7 +40,6 @@ const Setting = () => {
   const keyValArrayHandler = (e) => {
     const updatedArray = [...keyValInputs];
     updatedArray[e.target.dataset.idx - 1][e.target.name] = e.target.value;
-    setKeyValInputs(updatedArray);
 
     if (e.target.name === 'key') {
       if (
@@ -47,9 +47,14 @@ const Setting = () => {
           updatedArray[e.target.dataset.idx - 1][e.target.name][0]
         )
       ) {
+        updatedArray[e.target.dataset.idx - 1].errorKey = true;
         console.log(updatedArray[e.target.dataset.idx - 1]);
+      } else {
+        updatedArray[e.target.dataset.idx - 1].errorKey = false;
       }
     }
+
+    setKeyValInputs(updatedArray);
   };
 
   const [showDeleteButton, setShowDeleteButton] = useState(true);
