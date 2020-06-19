@@ -48,7 +48,6 @@ const Setting = () => {
         )
       ) {
         updatedArray[e.target.dataset.idx - 1].errorKey = true;
-        console.log(updatedArray[e.target.dataset.idx - 1]);
       } else {
         updatedArray[e.target.dataset.idx - 1].errorKey = false;
       }
@@ -120,6 +119,7 @@ const Setting = () => {
               data-idx={item.id}
               value={keyValInputs[index].key}
               onChange={keyValArrayHandler}
+              style={{ color: item.errorKey && 'red' }}
             />
             <input
               type='text'
