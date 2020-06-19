@@ -47,7 +47,7 @@ const Setting = () => {
           updatedArray[e.target.dataset.idx - 1][e.target.name][0]
         )
       ) {
-        alert('error');
+        console.log(updatedArray[e.target.dataset.idx - 1]);
       }
     }
   };
