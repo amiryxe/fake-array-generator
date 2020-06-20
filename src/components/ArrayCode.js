@@ -41,7 +41,7 @@ const ArrayCode = () => {
       </SyntaxHighlighter>
 
       <CopyToClipboard text={generateArray()}>
-        <span role='img' aria-label='copy'>
+        <span className='copy-btn' role='img' aria-label='copy'>
           📄
         </span>
       </CopyToClipboard>
