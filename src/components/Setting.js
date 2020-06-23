@@ -43,7 +43,7 @@ const Setting = () => {
 
     if (e.target.name === 'key') {
       if (
-        /^[0-9$-/:-?{-~!"^_`\[\]]+$/.test(
+        /^[0-9$-/:-?{-~!"^_`[\]]+$/.test(
           updatedArray[e.target.dataset.idx - 1][e.target.name][0]
         )
       ) {
