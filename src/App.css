@@ -53,6 +53,7 @@ ul {
 
 pre {
   max-height: 650px;
+  border-radius: 5px;
 }
 
 .add-another {
