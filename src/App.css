@@ -80,9 +80,9 @@ pre {
   cursor: pointer;
   background: transparent;
   border: none;
-  padding: 0 2px;
-  width: 25px;
-  height: 25px;
+  padding: 5px 5px;
+  width: 19px;
+  height: 20px;
   border-radius: 50%;
   transition: all 0.3s;
 }
