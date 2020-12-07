@@ -4,7 +4,7 @@ a simple project by react for make a array with fake data.
 
 ## Demo
 
-[Show Demo](https://amirsaa.github.io/fake-array-generator/)
+[Show Demo](https://amiryxe.github.io/fake-array-generator/)
 
 ### Dependencies
 
