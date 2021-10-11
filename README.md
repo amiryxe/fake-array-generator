@@ -1,6 +1,6 @@
 # Fake Array Generator
 
-a simple project by react for make a array with fake data.
+Simple project by react to generate an array with fake data.
 
 ## Demo
 
