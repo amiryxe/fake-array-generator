@@ -17,7 +17,7 @@ const ArrayCode = () => {
     const newObj = {}
 
     keyValInputs.map((item) => {
-      newObj[item.key] = item.value
+      newObj[item.key] = item.value.length > 1 && !isNaN(item.value) ? Number(item.value) : item.value
 
       setKeyVals({ ...newObj })
     })
