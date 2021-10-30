@@ -25,14 +25,14 @@ const ArrayCode = () => {
     const arr = []
     for (let i = 0; i < arrayLength; i++) {
       arr.push({
-        id: autoID ? Math.random() : i,
+        id: autoID ? i : Math.random(),
         ...newObj
       });
     }
 
     setResult([...arr]);
 
-  }, [keyValInputs, arrayLength]);
+  }, [keyValInputs, arrayLength, autoID]);
 
 
   return (
