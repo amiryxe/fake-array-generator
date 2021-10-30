@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MainContext from '../context/mainContext';
@@ -7,40 +7,53 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 const ArrayCode = () => {
   const { arrayLength, autoID, keyValInputs } = useContext(MainContext);
 
-  const generateArray = () => {
-    let str = '';
-    for (let i = 0; i < arrayLength; i++) {
-      str += `{ 
-    id: ${autoID ? i + 1 : String(Math.random()).split('.')[1]},
-    ${
-      keyValInputs.length > 0
-        ? keyValInputs
-            .map((item) =>
-              item.key
-                ? `${item.key}: ${
-                    item.value > 0 ? item.value + ',\n' : `"${item.value}",\n`
-                  }`
-                : ''
-            )
-            .join('    ')
-        : ''
-    }
-  },
-  `;
+  const [result, setResult] = useState('');
+  const [keyVals, setKeyVals] = useState(null);
+
+  useEffect(() => {
+    // let arr = [...keyVals];
+
+    // arr.push(keyValInputs.map((item, index) => ({
+    //   [item.key]: item.value,
+    // })))
+
+    const newObj = {
+      ...keyVals
     }
 
-    return `[
-  ${str}
-]`;
-  };
+    keyValInputs.map((item, index) => {
+
+
+      newObj[item.key] = item.value
+
+
+      setKeyVals(newObj)
+    })
+
+    // setKeyVals(arr);
+    // console.log(arr)
+
+    // for (let i = 0; i < arrayLength; i++) {
+    //   arr.push({
+    //     id: autoID ? Math.random() : i,
+    //     vals
+    //   });
+    // }
+
+    console.log(keyVals)
+
+
+    // setResult(JSON.stringify(arr, null, 2));
+  }, [keyValInputs]);
+
 
   return (
     <div className='code-area'>
       <SyntaxHighlighter language='javascript' style={a11yDark}>
-        {generateArray()}
+        {result}
       </SyntaxHighlighter>
 
-      <CopyToClipboard text={generateArray()}>
+      <CopyToClipboard text={result}>
         <span className='copy-btn' role='img' aria-label='copy'>
           📄
         </span>
