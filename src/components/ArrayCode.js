@@ -11,8 +11,6 @@ const ArrayCode = () => {
   const [keyVals, setKeyVals] = useState(null);
 
 
-
-
   useEffect(() => {
     console.log(keyValInputs)
 
@@ -34,7 +32,7 @@ const ArrayCode = () => {
 
     setResult([...arr]);
 
-  }, [keyValInputs]);
+  }, [keyValInputs, arrayLength]);
 
 
   return (
