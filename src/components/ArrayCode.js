@@ -10,50 +10,40 @@ const ArrayCode = () => {
   const [result, setResult] = useState('');
   const [keyVals, setKeyVals] = useState(null);
 
+
+
+
   useEffect(() => {
-    // let arr = [...keyVals];
+    console.log(keyValInputs)
 
-    // arr.push(keyValInputs.map((item, index) => ({
-    //   [item.key]: item.value,
-    // })))
+    const newObj = {}
 
-    const newObj = {
-      ...keyVals
-    }
-
-    keyValInputs.map((item, index) => {
-
-
+    keyValInputs.map((item) => {
       newObj[item.key] = item.value
 
-
-      setKeyVals(newObj)
+      setKeyVals({ ...newObj })
     })
 
-    // setKeyVals(arr);
-    // console.log(arr)
+    const arr = []
+    for (let i = 0; i < arrayLength; i++) {
+      arr.push({
+        id: autoID ? Math.random() : i,
+        ...newObj
+      });
+    }
 
-    // for (let i = 0; i < arrayLength; i++) {
-    //   arr.push({
-    //     id: autoID ? Math.random() : i,
-    //     vals
-    //   });
-    // }
+    setResult([...arr]);
 
-    console.log(keyVals)
-
-
-    // setResult(JSON.stringify(arr, null, 2));
   }, [keyValInputs]);
 
 
   return (
     <div className='code-area'>
       <SyntaxHighlighter language='javascript' style={a11yDark}>
-        {result}
+        {JSON.stringify(result, null, 2)}
       </SyntaxHighlighter>
 
-      <CopyToClipboard text={result}>
+      <CopyToClipboard text={JSON.stringify(result, null, 2)}>
         <span className='copy-btn' role='img' aria-label='copy'>
           📄
         </span>
