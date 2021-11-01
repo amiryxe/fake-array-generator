@@ -58,6 +58,8 @@ const Setting = () => {
 
   const [showDeleteButton, setShowDeleteButton] = useState(true);
 
+  const [idTypeStatus, setIdTypeStatus] = useState('auto');
+
   useEffect(() => {
     if (keyValInputs.length > 1) {
       setShowDeleteButton(true);
@@ -107,6 +109,21 @@ const Setting = () => {
         />
         Random ID
       </label>
+
+      <div>
+        <label htmlFor="auto_id">
+          <input type="radio" name="id-type" id="auto_id"
+            onChange={() => setIdTypeStatus('auto')} checked={idTypeStatus === 'auto'} />
+          Auto ID
+        </label>
+
+        <label htmlFor="random_id">
+          <input type="radio" name="id-type" id="random_id"
+            onChange={() => setIdTypeStatus('rand')} checked={idTypeStatus === 'rand'} />
+          Random ID
+        </label>
+      </div>
+
       <hr />
 
       <ul>

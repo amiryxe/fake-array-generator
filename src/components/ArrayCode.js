@@ -5,15 +5,14 @@ import MainContext from '../context/mainContext';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const ArrayCode = () => {
-  const { arrayLength, autoID, keyValInputs } = useContext(MainContext);
+  const { arrayLength, keyValInputs } = useContext(MainContext);
 
   const [result, setResult] = useState('');
 
-
   useEffect(() => {
-    console.log(keyValInputs)
-
     const newObj = {}
+
+    console.log(keyValInputs)
 
     keyValInputs.map((item) => {
       newObj[item.key] = item.value.length > 1 && !isNaN(item.value) ? Number(item.value) : item.value
@@ -21,14 +20,16 @@ const ArrayCode = () => {
 
     const arr = []
     for (let i = 0; i < arrayLength; i++) {
+      console.log(keyValInputs[i])
+
       arr.push({
-        id: autoID ? i + 1 : Math.random(),
+        id: keyValInputs && keyValInputs[i].id,
         ...newObj
       });
     }
 
     setResult([...arr]);
-  }, [keyValInputs, arrayLength, autoID]);
+  }, [keyValInputs, arrayLength]);
 
   return (
     <div className='code-area'>
