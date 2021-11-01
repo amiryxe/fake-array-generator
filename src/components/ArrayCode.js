@@ -8,7 +8,6 @@ const ArrayCode = () => {
   const { arrayLength, autoID, keyValInputs } = useContext(MainContext);
 
   const [result, setResult] = useState('');
-  const [keyVals, setKeyVals] = useState(null);
 
 
   useEffect(() => {
@@ -18,22 +17,18 @@ const ArrayCode = () => {
 
     keyValInputs.map((item) => {
       newObj[item.key] = item.value.length > 1 && !isNaN(item.value) ? Number(item.value) : item.value
-
-      setKeyVals({ ...newObj })
     })
 
     const arr = []
     for (let i = 0; i < arrayLength; i++) {
       arr.push({
-        id: autoID ? i : Math.random(),
+        id: autoID ? i + 1 : Math.random(),
         ...newObj
       });
     }
 
     setResult([...arr]);
-
   }, [keyValInputs, arrayLength, autoID]);
-
 
   return (
     <div className='code-area'>
