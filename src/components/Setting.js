@@ -15,66 +15,34 @@ const Setting = () => {
     setKeyValInputs,
   } = useContext(MainContext);
 
-  const changeIdHandler = (name) => {
-    if (name === 'autoID') {
-      setAutoID(true);
-      setRandomID(false);
-    } else {
-      setRandomID(true);
-      setAutoID(false);
-    }
-  };
 
-  const addKeyValInput = () => {
-    setKeyValInputs([
-      ...keyValInputs,
-      {
-        id: keyValInputs[keyValInputs.length - 1].id + 1,
-        key: '',
-        value: '',
-        errorKey: false,
-      },
-    ]);
-  };
-
-  const keyValArrayHandler = (e) => {
-    const updatedArray = [...keyValInputs];
-    updatedArray[e.target.dataset.idx - 1][e.target.name] = e.target.value;
-
-    if (e.target.name === 'key') {
-      if (
-        /^[0-9$-/:-?{-~!"^_`[\]]+$/.test(
-          updatedArray[e.target.dataset.idx - 1][e.target.name][0]
-        )
-      ) {
-        updatedArray[e.target.dataset.idx - 1].errorKey = true;
-      } else {
-        updatedArray[e.target.dataset.idx - 1].errorKey = false;
-      }
-    }
-
-    setKeyValInputs(updatedArray);
-  };
-
-  const [showDeleteButton, setShowDeleteButton] = useState(true);
+  const [recordList, setRecordList] = useState([]);
 
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
 
-  useEffect(() => {
-    if (keyValInputs.length > 1) {
-      setShowDeleteButton(true);
-    } else {
-      setShowDeleteButton(false);
-    }
-  }, [keyValInputs]);
+  const addRecord = () => {
+    setRecordList([
+      ...recordList,
+      {
+        id: '',
+        key: '',
+        value: '',
+      }
+    ])
+  }
 
-  const deleteItemHandler = (index) => {
-    if (keyValInputs.length > 1) {
-      const updatedArray = [...keyValInputs];
-      updatedArray.splice(index, 1);
-      setKeyValInputs(updatedArray);
+  const renderRecords = () => {
+    if (recordList.length > 0) {
+      recordList.map(item => {
+        console.log(item)
+
+        return <li>
+          <input type="text" placeholder="Key" />
+          <input type="text" placeholder="Value" />
+        </li>
+      })
     }
-  };
+  }
 
   return (
     <div>
@@ -91,23 +59,6 @@ const Setting = () => {
             e.target.value <= 200 && setArrayLength(Number(e.target.value))
           }
         />
-      </label>
-
-      <label>
-        <Checkbox
-          name='autoID'
-          checked={autoID}
-          onChange={(e) => changeIdHandler(e.target.name)}
-        />
-        Auto ID
-      </label>
-      <label>
-        <Checkbox
-          name='randomID'
-          checked={randomId}
-          onChange={(e) => changeIdHandler(e.target.name)}
-        />
-        Random ID
       </label>
 
       <div>
@@ -127,37 +78,9 @@ const Setting = () => {
       <hr />
 
       <ul>
-        {keyValInputs.map((item, index) => (
-          <li key={item.id}>
-            <input
-              type='text'
-              placeholder='Key'
-              name='key'
-              data-idx={item.id}
-              value={keyValInputs[index].key}
-              onChange={keyValArrayHandler}
-              style={{ color: item.errorKey && 'red' }}
-            />
-            <input
-              type='text'
-              name='value'
-              data-idx={item.id}
-              placeholder='Value'
-              value={keyValInputs[index].value}
-              onChange={keyValArrayHandler}
-            />
-            {showDeleteButton && (
-              <button
-                className='delete-btn'
-                onClick={() => deleteItemHandler(index)}
-              >
-                ×
-              </button>
-            )}
-          </li>
-        ))}
+        {renderRecords()}
       </ul>
-      <button className='add-another' onClick={addKeyValInput}>
+      <button className='add-another' onClick={addRecord}>
         + Add another?
       </button>
     </div>
