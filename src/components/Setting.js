@@ -7,12 +7,6 @@ const Setting = () => {
   const {
     arrayLength,
     setArrayLength,
-    autoID,
-    setAutoID,
-    randomId,
-    setRandomID,
-    keyValInputs,
-    setKeyValInputs,
   } = useContext(MainContext);
 
 
