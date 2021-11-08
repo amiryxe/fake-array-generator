@@ -1,7 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import MainContext from '../context/mainContext';
-import Checkbox from 'rc-checkbox';
-import 'rc-checkbox/assets/index.css';
 
 const Setting = () => {
   const {
