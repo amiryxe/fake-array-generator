@@ -20,9 +20,7 @@ const Setting = () => {
   }
 
   const renderRecords = () => {
-    return recordList.map((record, index) => {
-      return <Record key={index} index={index} />
-    })
+    return recordList.map((record, index) => <Record key={index} index={index} />)
   }
 
   return (

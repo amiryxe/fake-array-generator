@@ -12,16 +12,12 @@ const ArrayCode = () => {
   useEffect(() => {
     const newObj = {}
 
-    console.log(keyValInputs)
-
     keyValInputs.map((item) => {
       newObj[item.key] = item.value.length > 1 && !isNaN(item.value) ? Number(item.value) : item.value
     })
 
     const arr = []
     for (let i = 0; i < arrayLength; i++) {
-      console.log(keyValInputs[i])
-
       arr.push({
         id: keyValInputs && keyValInputs[i].id,
         ...newObj
