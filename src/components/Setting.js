@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import MainContext from '../context/mainContext';
+import Record from './Record';
 
 const Setting = () => {
   const {
@@ -8,32 +9,20 @@ const Setting = () => {
   } = useContext(MainContext);
 
 
-  const [recordList, setRecordList] = useState([]);
+  const [recordList, setRecordList] = useState([<Record />]);
 
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
 
   const addRecord = () => {
-    setRecordList([
-      ...recordList,
-      {
-        id: '',
-        key: '',
-        value: '',
-      }
-    ])
+    const tempRecordList = [...recordList];
+    tempRecordList.push(<Record />)
+    setRecordList(tempRecordList);
   }
 
   const renderRecords = () => {
-    if (recordList.length > 0) {
-      recordList.map(item => {
-        console.log(item)
-
-        return <li>
-          <input type="text" placeholder="Key" />
-          <input type="text" placeholder="Value" />
-        </li>
-      })
-    }
+    return recordList.map((record, index) => {
+      return <Record key={index} index={index} />
+    })
   }
 
   return (
