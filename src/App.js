@@ -1,4 +1,3 @@
-import React from 'react';
 import Setting from './components/Setting';
 import ArrayCode from './components/ArrayCode';
 import MainState from './context/MainState';
