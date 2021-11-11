@@ -10,7 +10,6 @@ const Setting = () => {
 
 
   const [recordList, setRecordList] = useState([<Record />]);
-
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
 
   const addRecord = () => {
@@ -24,9 +23,7 @@ const Setting = () => {
   }
 
   return (
-    <div>
-      <h1>Fake Array Generator</h1>
-      <br />
+    <>
       <h2>Setting:</h2>
       <label>
         <p>Count of items in array:</p>
@@ -62,7 +59,7 @@ const Setting = () => {
       <button className='add-another' onClick={addRecord}>
         + Add another?
       </button>
-    </div>
+    </>
   );
 };
 
