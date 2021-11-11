@@ -33,7 +33,12 @@ input {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-right: 5px;
-  margin-bottom: 10px;
+}
+
+.record {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 label {
