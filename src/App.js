@@ -3,7 +3,7 @@ import ArrayCode from './components/ArrayCode';
 import MainState from './context/MainState';
 import Header from './components/Header';
 import 'typeface-comfortaa';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
