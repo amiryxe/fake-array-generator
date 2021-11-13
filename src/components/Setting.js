@@ -11,6 +11,8 @@ const Setting = () => {
 
   const [recordList, setRecordList] = useState([<Record />]);
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
+  const [recordData, setRecordData] = useState({})
+  const [list, setList] = useState([]);
 
   const addRecord = () => {
     const tempRecordList = [...recordList];
@@ -19,7 +21,16 @@ const Setting = () => {
   }
 
   const renderRecords = () => {
-    return recordList.map((record, index) => <Record key={index} index={index} />)
+    return recordList.map((record, index) => {
+      const oldList = [...list];
+      oldList.push(recordData);
+      setList(oldList);
+
+      return <Record
+        key={index}
+        index={index}
+        setRecordData={setRecordData} />
+    })
   }
 
   return (

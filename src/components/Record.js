@@ -1,8 +1,31 @@
-export default function Record({ index }) {
+import { useState, useEffect } from "react"
+
+export default function Record({ index, setRecordData }) {
+    const [keyValue, setKeyValue] = useState('')
+    const [valueValue, setValueValue] = useState('')
+
+    useEffect(() => {
+        setRecordData({
+            id: index,
+            key: keyValue,
+            value: valueValue
+        })
+    }, [keyValue, valueValue])
+
     return (
         <div className="record">
-            <input type="text" placeholder={`Key ${index + 1}`} />
-            <input type="text" placeholder={`Value ${index + 1}`} />
+            <input type="text"
+                placeholder={`Key ${index + 1}`}
+                value={keyValue}
+                onChange={(e) => setKeyValue(e.target.value)}
+            />
+
+            <input type="text"
+                placeholder={`Value ${index + 1}`}
+                value={valueValue}
+                onChange={(e) => setValueValue(e.target.value)}
+            />
+
             <button style={{
                 border: 'none',
                 background: 'transparent',
