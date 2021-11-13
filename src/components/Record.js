@@ -6,7 +6,7 @@ export default function Record({ index, setRecordData }) {
 
     useEffect(() => {
         setRecordData({
-            id: index,
+            id: index + 1,
             key: keyValue,
             value: valueValue
         })

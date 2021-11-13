@@ -21,16 +21,12 @@ const Setting = () => {
   }
 
   const renderRecords = () => {
-    return recordList.map((record, index) => {
-      const oldList = [...list];
-      oldList.push(recordData);
-      setList(oldList);
-
-      return <Record
+    return recordList.map((record, index) => (
+      <Record
         key={index}
         index={index}
         setRecordData={setRecordData} />
-    })
+    ))
   }
 
   return (
