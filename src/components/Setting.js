@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import MainContext from '../context/mainContext';
 import Record from './Record';
 
@@ -13,6 +13,26 @@ const Setting = () => {
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
   const [recordData, setRecordData] = useState({})
   const [list, setList] = useState([]);
+
+  // TODO: work on this
+  useEffect(() => {
+    if (recordData) {
+      let oldList = [...list];
+      oldList = oldList.map((item) => {
+        if (item.id == recordData.id) {
+          return {
+            id: recordData.id,
+            key: recordData.key,
+            value: recordData.value,
+          }
+        }
+        return item;
+      });
+
+      setList(oldList);
+      console.log(oldList);
+    }
+  }, [recordData])
 
   const addRecord = () => {
     const tempRecordList = [...recordList];
