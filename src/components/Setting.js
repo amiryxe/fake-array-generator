@@ -17,20 +17,11 @@ const Setting = () => {
   // TODO: work on this
   useEffect(() => {
     if (recordData) {
-      let oldList = [...list];
-      oldList = oldList.map((item) => {
-        if (item.id == recordData.id) {
-          return {
-            id: recordData.id,
-            key: recordData.key,
-            value: recordData.value,
-          }
-        }
-        return item;
-      });
+      const newList = [...list, recordData];
 
-      setList(oldList);
-      console.log(oldList);
+      newList.lastIndexOf(item => item.id === recordData.id);
+
+
     }
   }, [recordData])
 
