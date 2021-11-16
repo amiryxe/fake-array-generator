@@ -18,16 +18,17 @@ const Setting = () => {
     if (recordData) {
       let newList = [...list];
 
-      newList = newList.map((item) => {
-        if (item.id === recordData.id) {
-          return {
-            id: recordData.id,
-            key: 'aa',
-            value: 'bb'
+      if (newList.length > 0) {
+        newList = newList.map((item) => {
+          if (item.id === recordData.id) {
+            return item;
+          } else {
+            return recordData;
           }
-        }
-        return item
-      })
+        })
+      } else {
+        newList.push(recordData);
+      }
 
       console.log(newList);
       setList(newList);
