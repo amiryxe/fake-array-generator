@@ -14,14 +14,23 @@ const Setting = () => {
   const [recordData, setRecordData] = useState({})
   const [list, setList] = useState([]);
 
-  // TODO: work on this
   useEffect(() => {
     if (recordData) {
-      const newList = [...list, recordData];
+      let newList = [...list];
 
-      newList.lastIndexOf(item => item.id === recordData.id);
+      newList = newList.map((item) => {
+        if (item.id === recordData.id) {
+          return {
+            id: recordData.id,
+            key: 'aa',
+            value: 'bb'
+          }
+        }
+        return item
+      })
 
-
+      console.log(newList);
+      setList(newList);
     }
   }, [recordData])
 
