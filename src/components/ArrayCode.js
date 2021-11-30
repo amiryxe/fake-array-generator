@@ -6,14 +6,25 @@ import { useStoreState } from 'easy-peasy';
 
 const ArrayCode = () => {
   const records = useStoreState((state) => state.records);
+  const count = useStoreState(state => state.count);
+
+  const renderResult = () => {
+    const arr = [];
+
+    for (let i = 0; i < count; i++) {
+      arr.push(records[i]);
+    }
+
+    return arr;
+  }
 
   return (
     <div className='code-area'>
       <SyntaxHighlighter language='javascript' style={a11yDark}>
-        {JSON.stringify(records, null, 2)}
+        {JSON.stringify(renderResult(), null, 2)}
       </SyntaxHighlighter>
 
-      <CopyToClipboard text={JSON.stringify(records, null, 2)}>
+      <CopyToClipboard text={JSON.stringify(renderResult(), null, 2)}>
         <span className='copy-btn' role='img' aria-label='copy'>
           📄
         </span>
