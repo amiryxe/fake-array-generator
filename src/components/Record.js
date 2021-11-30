@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react"
+import { useStoreActions } from 'easy-peasy';
+
 
 export default function Record({ index, setRecordData }) {
     const [keyValue, setKeyValue] = useState('')
     const [valueValue, setValueValue] = useState('')
 
+    const addRecord = useStoreActions((actions) => actions.addRecord);
+
     useEffect(() => {
-        setRecordData({
+        addRecord({
             id: index + 1,
             key: keyValue,
             value: valueValue

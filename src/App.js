@@ -4,20 +4,24 @@ import MainState from './context/MainState';
 import Header from './components/Header';
 import 'typeface-comfortaa';
 import './App.scss';
+import store from './store';
+import { StoreProvider } from 'easy-peasy';
 
 function App() {
   return (
-    <div className='container'>
-      <MainState>
-        <div className='section'>
-          <Header />
-          <Setting />
-        </div>
-        <div className='section'>
-          <ArrayCode />
-        </div>
-      </MainState>
-    </div>
+    <StoreProvider store={store}>
+      <div className='container'>
+        <MainState>
+          <div className='section'>
+            <Header />
+            <Setting />
+          </div>
+          <div className='section'>
+            <ArrayCode />
+          </div>
+        </MainState>
+      </div>
+    </StoreProvider>
   );
 }
 
