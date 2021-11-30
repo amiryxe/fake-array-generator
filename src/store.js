@@ -9,6 +9,11 @@ const store = createStore({
     addRecord: action((state, payload) => {
         state.records.push(payload);
     }),
+    updateRecord: action((state, payload) => {
+        const { id, key, value } = payload;
+        const record = state.records.find(record => record.id === id);
+        record[key] = value;
+    })
 });
 
 export default store;

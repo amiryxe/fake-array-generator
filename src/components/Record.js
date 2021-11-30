@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useStoreActions } from "react";
 
 export default function Record({ index }) {
-    const [keyValue, setKeyValue] = useState('')
-    const [valueValue, setValueValue] = useState('')
+    const [keyValue, setKeyValue] = useState('');
+    const [valueValue, setValueValue] = useState('');
+
+    // const updateRecord = useStoreActions(actions => actions.updateRecord);
 
     return (
         <div className="record">
