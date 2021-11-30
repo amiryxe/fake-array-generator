@@ -1,6 +1,8 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import MainContext from '../context/mainContext';
 import Record from './Record';
+import { useStoreActions, useStoreState } from 'easy-peasy';
+
 
 const Setting = () => {
   const {
@@ -8,46 +10,19 @@ const Setting = () => {
     setArrayLength,
   } = useContext(MainContext);
 
-
   const [recordList, setRecordList] = useState([<Record />]);
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
-  const [recordData, setRecordData] = useState({})
-  const [list, setList] = useState([]);
 
-  useEffect(() => {
-    if (recordData) {
-      let newList = [...list];
+  const addRecord = useStoreActions((actions) => actions.addRecord);
+  const records = useStoreState((state) => state.records);
+  const lastRecordID = records[records.length - 1].id;
 
-      if (newList.length > 0) {
-        newList = newList.map((item) => {
-          if (item.id === recordData.id) {
-            return item;
-          } else {
-            return recordData;
-          }
-        })
-      } else {
-        newList.push(recordData);
-      }
-
-      console.log(newList);
-      setList(newList);
-    }
-  }, [recordData])
-
-  const addRecord = () => {
-    const tempRecordList = [...recordList];
-    tempRecordList.push(<Record />)
-    setRecordList(tempRecordList);
-  }
-
-  const renderRecords = () => {
-    return recordList.map((record, index) => (
-      <Record
-        key={index}
-        index={index}
-        setRecordData={setRecordData} />
-    ))
+  const addAnother = () => {
+    addRecord({
+      id: lastRecordID + 1,
+      key: '',
+      value: ''
+    })
   }
 
   return (
@@ -82,9 +57,11 @@ const Setting = () => {
       <hr />
 
       <ul>
-        {renderRecords()}
+        {records.map(item => (
+          <Record key={item.id} index={item.id} />
+        ))}
       </ul>
-      <button className='add-another' onClick={addRecord}>
+      <button className='add-another' onClick={addAnother}>
         + Add another?
       </button>
     </>
