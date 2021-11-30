@@ -14,14 +14,14 @@ const Setting = () => {
 
   const count = useStoreState(state => state.count);
   const records = useStoreState((state) => state.records);
-  const lastRecordID = records[records.length - 1].id;
+  const lastPropID = records[records.length - 1].id;
 
   const addProp = useStoreActions((actions) => actions.addProp);
   const setCount = useStoreActions((actions) => actions.setCount);
 
   const addAnother = () => {
     addProp({
-      id: lastRecordID + 1,
+      id: lastPropID + 1,
       key: '',
       value: ''
     })
