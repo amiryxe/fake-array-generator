@@ -16,14 +16,22 @@ const store = createStore({
     ],
     updatePropItem: action((state, payload) => {
         const { id, key, value } = payload;
-        state.propItems.map(item => {
+
+        const arr = [];
+
+        state.propItems.forEach(item => {
             if (item.id === id) {
-                item[key] = key;
-                item.value = value;
+                arr.push({
+                    id: id,
+                    key: key,
+                    value: value
+                })
             } else {
-                return item;
+                arr.push(item);
             }
-        });
+        })
+
+        state.propItems = arr;
     }),
     record: computed(state => {
         const obj = {};
@@ -36,11 +44,6 @@ const store = createStore({
     addPropItem: action((state, payload) => {
         state.propItems.push(payload);
     }),
-    updateRecord: action((state, payload) => {
-        const { id, key, value } = payload;
-        const record = state.records.find(record => record.id === id);
-        record[key] = value;
-    })
 });
 
 export default store;

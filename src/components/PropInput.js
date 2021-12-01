@@ -15,7 +15,7 @@ export default function PropInput({ data }) {
 
     useEffect(() => {
         updatePropItem({
-            id,
+            id: id,
             key: keyValue,
             value: valueValue
         });

@@ -8,8 +8,6 @@ const ArrayCode = () => {
   const record = useStoreState((state) => state.record);
   const count = useStoreState(state => state.count);
 
-  console.log(record)
-
   const renderResult = () => {
     const arr = [];
 
