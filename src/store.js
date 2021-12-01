@@ -1,18 +1,29 @@
-import { createStore, action } from "easy-peasy";
+import { createStore, action, computed } from "easy-peasy";
 
 const store = createStore({
     count: 1,
-    records: [{
-        "id": 1,
-        "name": "John Doe",
-        "age": 27,
-        "city": "New York",
-    }],
-
+    propItems: [
+        {
+            id: 1,
+            key: 'name',
+            value: 'John Doe'
+        },
+        {
+            id: 2,
+            key: 'age',
+            value: 28
+        }
+    ],
+    record: computed(state => {
+        const obj = {};
+        state.propItem.map(item => obj[item.key] = item.value)
+        return obj;
+    }),
+    records: [],
     setCount: action((state, payload) => {
         state.count = payload;
     }),
-    addProp: action((state, payload) => {
+    addPropItem: action((state, payload) => {
         state.records.push(payload);
     }),
     updateRecord: action((state, payload) => {
