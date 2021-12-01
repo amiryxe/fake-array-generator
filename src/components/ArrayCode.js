@@ -5,14 +5,16 @@ import { useStoreState } from 'easy-peasy';
 
 
 const ArrayCode = () => {
-  const records = useStoreState((state) => state.records);
+  const record = useStoreState((state) => state.record);
   const count = useStoreState(state => state.count);
+
+  console.log(record)
 
   const renderResult = () => {
     const arr = [];
 
     for (let i = 0; i < count; i++) {
-      arr.push(records[i]);
+      arr.push(record);
     }
 
     return arr;

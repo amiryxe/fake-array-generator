@@ -1,22 +1,36 @@
-import { useState } from "react";
-import { useStoreActions } from "react";
+import { useState, useEffect } from "react";
+import { useStoreActions } from "easy-peasy";
 
-export default function Record({ index }) {
-    const [keyValue, setKeyValue] = useState('');
-    const [valueValue, setValueValue] = useState('');
+export default function PropInput({ data }) {
+    const {
+        id,
+        key,
+        value
+    } = data;
 
-    // const updateRecord = useStoreActions(actions => actions.updateRecord);
+    const updatePropItem = useStoreActions(actions => actions.updatePropItem);
+
+    const [keyValue, setKeyValue] = useState(key);
+    const [valueValue, setValueValue] = useState(value);
+
+    useEffect(() => {
+        updatePropItem({
+            id,
+            key: keyValue,
+            value: valueValue
+        });
+    }, [keyValue, valueValue]);
 
     return (
         <div className="record">
             <input type="text"
-                placeholder={`Key ${index}`}
+                placeholder={`Key ${id}`}
                 value={keyValue}
                 onChange={(e) => setKeyValue(e.target.value)}
             />
 
             <input type="text"
-                placeholder={`Value ${index}`}
+                placeholder={`Value ${id}`}
                 value={valueValue}
                 onChange={(e) => setValueValue(e.target.value)}
             />

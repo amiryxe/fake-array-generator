@@ -14,17 +14,27 @@ const store = createStore({
             value: 28
         }
     ],
+    updatePropItem: action((state, payload) => {
+        const { id, key, value } = payload;
+        state.propItems.map(item => {
+            if (item.id === id) {
+                item[key] = key;
+                item.value = value;
+            } else {
+                return item;
+            }
+        });
+    }),
     record: computed(state => {
         const obj = {};
-        state.propItem.map(item => obj[item.key] = item.value)
+        state.propItems.map(item => obj[item.key] = item.value)
         return obj;
     }),
-    records: [],
     setCount: action((state, payload) => {
         state.count = payload;
     }),
     addPropItem: action((state, payload) => {
-        state.records.push(payload);
+        state.propItems.push(payload);
     }),
     updateRecord: action((state, payload) => {
         const { id, key, value } = payload;

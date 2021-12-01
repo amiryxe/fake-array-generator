@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import Record from './Record';
+import PropInput from './PropInput';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 
 const Setting = () => {
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
 
   const count = useStoreState(state => state.count);
-  const records = useStoreState((state) => state.records);
-  const lastPropID = records[records.length - 1].id;
+  const propItems = useStoreState((state) => state.propItems);
+  const lastPropID = propItems[propItems.length - 1].id;
 
-  const addProp = useStoreActions((actions) => actions.addProp);
+  const addPropItem = useStoreActions((actions) => actions.addPropItem);
   const setCount = useStoreActions((actions) => actions.setCount);
 
   const addAnother = () => {
-    addProp({
+    addPropItem({
       id: lastPropID + 1,
       key: '',
       value: ''
@@ -52,8 +52,8 @@ const Setting = () => {
       <hr />
 
       <ul>
-        {records.map(item => (
-          <Record key={item.id} index={item.id} />
+        {propItems.map(item => (
+          <PropInput key={item.id} data={item} />
         ))}
       </ul>
       <button className='add-another' onClick={addAnother}>
