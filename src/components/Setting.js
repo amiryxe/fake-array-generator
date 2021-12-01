@@ -4,11 +4,6 @@ import Record from './Record';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 
 const Setting = () => {
-  const {
-    arrayLength,
-    setArrayLength,
-  } = useContext(MainContext);
-
   const [recordList, setRecordList] = useState([<Record />]);
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
 
