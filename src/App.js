@@ -1,6 +1,5 @@
 import Setting from './components/Setting';
 import ArrayCode from './components/ArrayCode';
-import MainState from './context/MainState';
 import Header from './components/Header';
 import 'typeface-comfortaa';
 import './App.scss';
@@ -11,15 +10,13 @@ function App() {
   return (
     <StoreProvider store={store}>
       <div className='container'>
-        <MainState>
-          <div className='section'>
-            <Header />
-            <Setting />
-          </div>
-          <div className='section'>
-            <ArrayCode />
-          </div>
-        </MainState>
+        <div className='section'>
+          <Header />
+          <Setting />
+        </div>
+        <div className='section'>
+          <ArrayCode />
+        </div>
       </div>
     </StoreProvider>
   );

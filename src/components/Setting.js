@@ -1,10 +1,8 @@
-import { useContext, useState } from 'react';
-import MainContext from '../context/mainContext';
+import { useState } from 'react';
 import Record from './Record';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 
 const Setting = () => {
-  const [recordList, setRecordList] = useState([<Record />]);
   const [idTypeStatus, setIdTypeStatus] = useState('auto');
 
   const count = useStoreState(state => state.count);
