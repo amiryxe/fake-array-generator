@@ -11,3 +11,4 @@ Simple project by react to generate an array with fake data.
 - CRA
 - typeface-comfortaa
 - react-syntax-highlighter
+- Easy Peasy v5
