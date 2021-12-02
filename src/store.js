@@ -14,6 +14,11 @@ const store = createStore({
             value: 28
         }
     ],
+    record: computed(state => {
+        const obj = {};
+        state.propItems.map(item => obj[item.key] = item.value)
+        return obj;
+    }),
     updatePropItem: action((state, payload) => {
         const { id, key, value } = payload;
 
@@ -32,11 +37,6 @@ const store = createStore({
         })
 
         state.propItems = arr;
-    }),
-    record: computed(state => {
-        const obj = {};
-        state.propItems.map(item => obj[item.key] = item.value)
-        return obj;
     }),
     setCount: action((state, payload) => {
         state.count = payload;
