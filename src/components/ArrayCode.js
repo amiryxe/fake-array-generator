@@ -3,7 +3,6 @@ import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useStoreState } from 'easy-peasy';
 
-
 const ArrayCode = () => {
   const record = useStoreState((state) => state.record);
   const count = useStoreState(state => state.count);
