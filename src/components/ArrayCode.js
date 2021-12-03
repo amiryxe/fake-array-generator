@@ -23,7 +23,7 @@ const ArrayCode = () => {
         {JSON.stringify(renderResult(), null, 2)}
       </SyntaxHighlighter>
 
-      <CopyToClipboard text={JSON.stringify(renderResult(), null, 2)}>
+      <CopyToClipboard text={JSON.stringify(renderResult(), null, 2)} title="Copy to clipboard">
         <span className='copy-btn' role='img' aria-label='copy'>
           📄
         </span>
