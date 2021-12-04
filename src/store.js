@@ -1,4 +1,5 @@
 import { createStore, action, computed } from "easy-peasy";
+import uuid4 from "uuid4";
 
 const store = createStore({
     count: 1,
@@ -16,6 +17,7 @@ const store = createStore({
     ],
     record: computed(state => {
         const obj = {};
+        // obj.id = uuid4();
         state.propItems.map(item => obj[item.key] = item.value)
         return obj;
     }),
