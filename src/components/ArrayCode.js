@@ -11,7 +11,10 @@ const ArrayCode = () => {
     const arr = [];
 
     for (let i = 0; i < count; i++) {
-      arr.push(record);
+      arr.push({
+        id: i + 1,
+        ...record
+      });
     }
 
     return arr;
