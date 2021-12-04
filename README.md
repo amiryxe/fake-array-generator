@@ -1,4 +1,4 @@
-# Fake Array Generator
+# Fake (JSON) Array Generator
 
 Simple project by react to generate an array with fake data.
 
@@ -12,3 +12,4 @@ Simple project by react to generate an array with fake data.
 - typeface-comfortaa
 - react-syntax-highlighter
 - Easy Peasy v5
+- UUID
