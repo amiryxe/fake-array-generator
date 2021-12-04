@@ -2,17 +2,19 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useStoreState } from 'easy-peasy';
+import { v4 as uuidv4 } from 'uuid';
 
 const ArrayCode = () => {
   const record = useStoreState((state) => state.record);
   const count = useStoreState(state => state.count);
+  const isAutoID = useStoreState(state => state.isAutoID)
 
   const renderResult = () => {
     const arr = [];
 
     for (let i = 0; i < count; i++) {
       arr.push({
-        id: i + 1,
+        id: isAutoID ? i + 1 : uuidv4(),
         ...record
       });
     }
