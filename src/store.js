@@ -2,6 +2,7 @@ import { createStore, action, computed } from "easy-peasy";
 
 const store = createStore({
     count: 1,
+    autoID: true,
     propItems: [
         {
             id: 1,
@@ -44,6 +45,9 @@ const store = createStore({
     addPropItem: action((state, payload) => {
         state.propItems.push(payload);
     }),
+    changeAutoID: action((state, payload) => {
+        state.autoID = payload;
+    })
 });
 
 export default store;
