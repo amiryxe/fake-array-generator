@@ -47,6 +47,9 @@ const store = createStore({
     }),
     changeAutoID: action((state, payload) => {
         state.isAutoID = payload;
+    }),
+    deleteProp: action((state, payload) => {
+        state.propItems = state.propItems.filter(item => item.id !== payload)
     })
 });
 

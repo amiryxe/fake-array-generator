@@ -9,6 +9,7 @@ export default function PropInput({ data }) {
     } = data;
 
     const updatePropItem = useStoreActions(actions => actions.updatePropItem);
+    const deleteProp = useStoreActions(actions => actions.deleteProp)
 
     const [keyValue, setKeyValue] = useState(key);
     const [valueValue, setValueValue] = useState(value);
@@ -22,7 +23,7 @@ export default function PropInput({ data }) {
     }, [keyValue, valueValue]);
 
     const handleDeleteProp = () => {
-        console.log(id)
+        deleteProp(id)
     }
 
     return (
