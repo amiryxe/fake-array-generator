@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useStoreActions } from "easy-peasy";
+import { useStoreActions, useStoreState } from "easy-peasy";
 
 export default function PropInput({ data }) {
     const {
@@ -9,7 +9,8 @@ export default function PropInput({ data }) {
     } = data;
 
     const updatePropItem = useStoreActions(actions => actions.updatePropItem);
-    const deleteProp = useStoreActions(actions => actions.deleteProp)
+    const deleteProp = useStoreActions(actions => actions.deleteProp);
+    const propLength = useStoreState(state => state.propItems.length);
 
     const [keyValue, setKeyValue] = useState(key);
     const [valueValue, setValueValue] = useState(value);
@@ -42,6 +43,7 @@ export default function PropInput({ data }) {
 
             <button
                 onClick={handleDeleteProp}
+                hidden={propLength <= 1}
                 style={{
                     border: 'none',
                     background: 'transparent',
