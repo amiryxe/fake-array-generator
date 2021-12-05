@@ -21,7 +21,7 @@ export default function PropInput({ data }) {
             key: keyValue,
             value: valueValue
         });
-    }, [keyValue, valueValue]);
+    }, [keyValue, valueValue, id]);
 
     const handleDeleteProp = () => {
         deleteProp(id)
