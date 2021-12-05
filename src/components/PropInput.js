@@ -21,6 +21,8 @@ export default function PropInput({ data }) {
             key: keyValue,
             value: valueValue
         });
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [keyValue, valueValue, id]);
 
     const handleDeleteProp = () => {
