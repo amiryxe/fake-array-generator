@@ -1,5 +1,5 @@
 import Setting from './components/Setting';
-import ArrayCode from './components/ArrayCode';
+import Result from './components/Result';
 import Header from './components/Header';
 import 'typeface-comfortaa';
 import './App.scss';
@@ -15,7 +15,7 @@ function App() {
           <Setting />
         </div>
         <div className='section'>
-          <ArrayCode />
+          <Result />
         </div>
       </div>
     </StoreProvider>
