@@ -1,3 +1,3 @@
 export default function Header() {
-    return <h1>Fake Array Generator</h1>
+    return <h1>Fake JSON Array Generator</h1>
 }
