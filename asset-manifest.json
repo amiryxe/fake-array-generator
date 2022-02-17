@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/fake-array-generator/static/css/main.3f76f1ca.chunk.css",
-    "main.js": "/fake-array-generator/static/js/main.9cb0e2bc.chunk.js",
-    "main.js.map": "/fake-array-generator/static/js/main.9cb0e2bc.chunk.js.map",
-    "runtime-main.js": "/fake-array-generator/static/js/runtime-main.876288ed.js",
-    "runtime-main.js.map": "/fake-array-generator/static/js/runtime-main.876288ed.js.map",
-    "static/css/2.b5eff338.chunk.css": "/fake-array-generator/static/css/2.b5eff338.chunk.css",
-    "static/js/2.0afdba09.chunk.js": "/fake-array-generator/static/js/2.0afdba09.chunk.js",
-    "static/js/2.0afdba09.chunk.js.map": "/fake-array-generator/static/js/2.0afdba09.chunk.js.map",
+    "main.css": "/fake-array-generator/static/css/main.9a9e887f.css",
+    "main.js": "/fake-array-generator/static/js/main.1ac540a3.js",
+    "static/media/comfortaa-latin-600.woff": "/fake-array-generator/static/media/comfortaa-latin-600.5d6357a3d8f87d624988.woff",
+    "static/media/comfortaa-latin-500.woff": "/fake-array-generator/static/media/comfortaa-latin-500.9e80e4165710de6d9044.woff",
+    "static/media/comfortaa-latin-400.woff": "/fake-array-generator/static/media/comfortaa-latin-400.1062775ebf53fce58c73.woff",
+    "static/media/comfortaa-latin-700.woff": "/fake-array-generator/static/media/comfortaa-latin-700.a5df3229fa6287ff1560.woff",
+    "static/media/comfortaa-latin-300.woff": "/fake-array-generator/static/media/comfortaa-latin-300.911ef30768f5a0d12c76.woff",
+    "static/media/comfortaa-latin-600.woff2": "/fake-array-generator/static/media/comfortaa-latin-600.dced3d746c67ae98f8aa.woff2",
+    "static/media/comfortaa-latin-500.woff2": "/fake-array-generator/static/media/comfortaa-latin-500.859cde90087a3912ce6f.woff2",
+    "static/media/comfortaa-latin-400.woff2": "/fake-array-generator/static/media/comfortaa-latin-400.10d0757ad3de00eea8eb.woff2",
+    "static/media/comfortaa-latin-700.woff2": "/fake-array-generator/static/media/comfortaa-latin-700.0e88371829b60024844d.woff2",
+    "static/media/comfortaa-latin-300.woff2": "/fake-array-generator/static/media/comfortaa-latin-300.13751da662cc44ba5ef6.woff2",
     "index.html": "/fake-array-generator/index.html",
-    "static/css/2.b5eff338.chunk.css.map": "/fake-array-generator/static/css/2.b5eff338.chunk.css.map",
-    "static/css/main.3f76f1ca.chunk.css.map": "/fake-array-generator/static/css/main.3f76f1ca.chunk.css.map",
-    "static/js/2.0afdba09.chunk.js.LICENSE.txt": "/fake-array-generator/static/js/2.0afdba09.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/fake-array-generator/static/media/comfortaa-latin-700.a5df3229.woff"
+    "main.9a9e887f.css.map": "/fake-array-generator/static/css/main.9a9e887f.css.map",
+    "main.1ac540a3.js.map": "/fake-array-generator/static/js/main.1ac540a3.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.876288ed.js",
-    "static/css/2.b5eff338.chunk.css",
-    "static/js/2.0afdba09.chunk.js",
-    "static/css/main.3f76f1ca.chunk.css",
-    "static/js/main.9cb0e2bc.chunk.js"
+    "static/css/main.9a9e887f.css",
+    "static/js/main.1ac540a3.js"
   ]
 }
