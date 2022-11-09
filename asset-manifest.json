@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/fake-array-generator/static/css/main.9a9e887f.css",
-    "main.js": "/fake-array-generator/static/js/main.1ac540a3.js",
+    "main.js": "/fake-array-generator/static/js/main.81a4b7a5.js",
     "static/media/comfortaa-latin-600.woff": "/fake-array-generator/static/media/comfortaa-latin-600.5d6357a3d8f87d624988.woff",
     "static/media/comfortaa-latin-500.woff": "/fake-array-generator/static/media/comfortaa-latin-500.9e80e4165710de6d9044.woff",
     "static/media/comfortaa-latin-400.woff": "/fake-array-generator/static/media/comfortaa-latin-400.1062775ebf53fce58c73.woff",
@@ -14,10 +14,10 @@
     "static/media/comfortaa-latin-300.woff2": "/fake-array-generator/static/media/comfortaa-latin-300.13751da662cc44ba5ef6.woff2",
     "index.html": "/fake-array-generator/index.html",
     "main.9a9e887f.css.map": "/fake-array-generator/static/css/main.9a9e887f.css.map",
-    "main.1ac540a3.js.map": "/fake-array-generator/static/js/main.1ac540a3.js.map"
+    "main.81a4b7a5.js.map": "/fake-array-generator/static/js/main.81a4b7a5.js.map"
   },
   "entrypoints": [
     "static/css/main.9a9e887f.css",
-    "static/js/main.1ac540a3.js"
+    "static/js/main.81a4b7a5.js"
   ]
 }
